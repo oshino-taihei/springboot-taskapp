@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Taskapp</title>
+</head>
+<body>
+
+<h1>Welcome to taskapp!</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>タイトル</th>
+        <th>内容</th>
+        <th>ステータス</th>
+        <th>作成日</th>
+    </tr>
+
+    <tr th:each="task : ${tasks}" th:object="${task}">
+        <td th:text="*{id}">1</td>
+        <td th:text="*{title}">title</td>
+        <td th:text="*{body}">body</td>
+        <td th:text="*{status}">0</td>
+        <td th:text="*{#temporals.format(createdOn, 'uuuu-MM-dd')}">2000-01-01</td>
+    </tr>
+</table>
+
+</body>
+</html>
